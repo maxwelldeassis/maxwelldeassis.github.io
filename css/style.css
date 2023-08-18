@@ -17,7 +17,10 @@
     --std-padding: 1.2rem;
     --half-std-paddind: calc(var(--std-padding)/2);
     --padding-side: calc(var(--std-padding) * 2);
-    font-size: 1,4em;
+    --st1: var(--theme-blue_accent2);
+    --st2: var(--theme-blue_accent3);
+    --maintenance-gradient-pattern: repeating-linear-gradient( -45deg, var(--st1), var(--st1) 1ch, var(--st2) 1ch, var(--st2) 2ch);
+    font-size: 1, 4em;
     font-family: Oxygen;
 }
 
@@ -129,10 +132,12 @@ body {
 
 .wa-button a {
     display: flex;
-    background-color: var(--theme-blue_accent4);
+    background-color: var(--theme-blue_accent1);
+    border: 5px solid var(--theme-blue_accent3);
     font-size: 1.2rem;
+    font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: var(--theme-blue_accent3);
     align-self: center;
     align-items: center;
     max-height: 5em;
@@ -140,30 +145,42 @@ body {
     border-radius: 50vh;
 }
 
+.wa-logo {
+    fill: green;
+    height: 1.5rem;
+    margin-right: 1ch;
+}
+
+.maintenance-banner {
+    flex-direction: column;
+    align-items: center;
+    background: var(--maintenance-gradient-pattern);
+    color: var(--theme-blue_accent1);
+    width: 100vw;
+}
+
+.maintenance-banner h2 {
+    margin: .12em;
+}
+
 @media handheld,
 (max-width: 800px) {
-
-    :root{
+     :root {
         font-size: 1.8em;
     }
-    
     #header {
         align-content: space-evenly;
     }
-    
     #menu-toggle {
         display: flex;
     }
-    
     #menu-toggle:hover {
         animation: menuHover 0.2s ease-in forwards;
     }
-    
     .nav-item {
         display: none;
     }
-    
-    #main-content{
+    #main-content {
         padding: var(--padding-side);
     }
 }
